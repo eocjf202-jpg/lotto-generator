@@ -24,8 +24,13 @@
   }
   h1 {
     font-size: 20px;
-    margin: 0 0 24px;
+    margin: 0 0 8px;
     color: #222;
+  }
+  .notice {
+    font-size: 12px;
+    color: #999;
+    margin: 0 0 24px;
   }
   button {
     background: #4a90d9;
@@ -40,6 +45,16 @@
     width: 100%;
   }
   button:active { background: #3a7bc8; }
+  .blog-link {
+    display: block;
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid #eee;
+    font-size: 13px;
+    color: #4a90d9;
+    text-decoration: none;
+  }
+  .blog-link:active { opacity: 0.7; }
   .row {
     display: flex;
     align-items: center;
@@ -51,7 +66,7 @@
   .label {
     font-size: 13px;
     color: #999;
-    width: 30px;
+    width: 44px;
     flex-shrink: 0;
     text-align: left;
   }
@@ -76,8 +91,10 @@
 <body>
 <div class="card">
   <h1>로또 번호 생성기</h1>
+  <p class="notice">이건 실제 복권이 아닌 가상 번호 생성기입니다.</p>
   <button onclick="generateGames()">5게임 생성하기</button>
   <div id="results"></div>
+  <a class="blog-link" href="https://blog.naver.com/issue_tracker-512/224382561540" target="_blank">로또 관련 더 많은 이야기 보러가기 →</a>
 </div>
 
 <script>
@@ -108,7 +125,7 @@ function generateGames() {
 
     const label = document.createElement("div");
     label.className = "label";
-    label.textContent = "A" + (i + 1);
+    label.textContent = "게임" + (i + 1);
     row.appendChild(label);
 
     const balls = document.createElement("div");
